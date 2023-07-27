@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/pizzas', function () {
     /*
     can return views.
@@ -23,7 +24,7 @@ Route::get('/pizzas', function () {
     $pizzas = [
         // array 1
         [
-            'type' => 'Regular','base' => 'Cheesy Crust','price' =>  10
+            'type' => 'Regular', 'base' => 'Cheesy Crust', 'price' =>  10
         ],
         // array 2
         [
@@ -34,7 +35,13 @@ Route::get('/pizzas', function () {
             'type' => 'BBq', 'base' => 'Thin & Crispy', 'price' =>  10
         ],
     ];
-    return view('pizzas', ['pizzas' => $pizzas]);
+    // used for query parameter passed in the url
+    $name = request('name');
+    return view('pizzas', [
+        'pizzas' => $pizzas,
+        'name' => $name,
+        'age' => request('age'),
+    ]);
 
     /*
     can also return string. 
@@ -45,4 +52,9 @@ Route::get('/pizzas', function () {
     can also return json.
     */
     // return $pizza=['name' => 'veg-pizza', 'base' => 'classic'];
+});
+
+Route::get('/pizzas/{id}', function ($id) {
+    // use the id varaible to query the db for a record 
+    return view('details', ['id' => $id]);
 });

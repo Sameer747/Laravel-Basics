@@ -20,6 +20,7 @@
             @unless ($base == 'Cheesy Crust')
                 <p>You don't have cheesy crust</p>
             @endunless --}}
+            <p>{{ $name }} - {{ $age }}</p>
             @foreach ($pizzas as $p)
                 <div>
                     {{ @$loop->index }} - {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }}
