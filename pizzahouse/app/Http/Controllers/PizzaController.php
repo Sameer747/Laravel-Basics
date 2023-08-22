@@ -7,6 +7,7 @@ use App\Pizza;
 
 class PizzaController extends Controller
 {
+    
     /*
     for /pizzas route
     */ 
@@ -56,7 +57,8 @@ class PizzaController extends Controller
     */
     public function show ($id) {
         // use the id varaible to query the db for a record 
-        return view('pizzas.show', ['id' => $id]);
+        $pizza = Pizza::findOrFail($id);
+        return view('pizzas.show', ['pizza' => $pizza]);
     }
 
     /*
