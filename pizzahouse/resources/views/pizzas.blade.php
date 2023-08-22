@@ -15,6 +15,7 @@
             @else
                 <p>The price is economic.</p>
             @endif
+
             opposite of if $base is cheesy crust it won't output the p tag below
             if it's not cheesy crust it will output the below p tag
             @unless ($base == 'Cheesy Crust')
@@ -27,10 +28,16 @@
             {{-- @for ($i=0 ;$i < count($pizzas) ;$i++)
                 <p>{{$i}}- {{$pizzas[$i]['type']}} - {{$pizzas[$i]['base']}} - {{$pizzas[$i]['price']}}</p>
             @endfor --}}
+
+            {{-- this was used for query parameter. --}}
             <p>{{ $name }} - {{ $age }}</p>
+            
             @foreach ($pizzas as $p)
                 <div>
-                    {{ @$loop->index }} - {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }}
+                    {{-- this was used when the data was an array made by me --}}
+                    {{-- {{ @$loop->index }} - {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }} --}}
+                    
+                    {{$p->name}} - {{$p->type}} - {{$p->base}}
                 </div>
             @endforeach
         </div>
