@@ -16,45 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    /*
-    can return views.
-    */
-    //second argument is used to pass data from db to show it via forntend
-    $pizzas = [
-        // array 1
-        [
-            'type' => 'Regular', 'base' => 'Cheesy Crust', 'price' =>  10
-        ],
-        // array 2
-        [
-            'type' => 'Veg', 'base' => 'Garlic Crust', 'price' =>  10
-        ],
-        // array 3
-        [
-            'type' => 'BBq', 'base' => 'Thin & Crispy', 'price' =>  10
-        ],
-    ];
-    // used for query parameter passed in the url
-    $name = request('name');
-    return view('pizzas', [
-        'pizzas' => $pizzas,
-        'name' => $name,
-        'age' => request('age'),
-    ]);
+Route::get('/pizzas', 'PizzaController@index');
 
-    /*
-    can also return string. 
-    */
-    // return "Pizzas.";
-
-    /*
-    can also return json.
-    */
-    // return $pizza=['name' => 'veg-pizza', 'base' => 'classic'];
-});
-
-Route::get('/pizzas/{id}', function ($id) {
-    // use the id varaible to query the db for a record 
-    return view('details', ['id' => $id]);
-});
+//route parameters(wildcards)
+Route::get('/pizzas/{id}', 'PizzaController@show');

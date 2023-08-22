@@ -20,6 +20,13 @@
             @unless ($base == 'Cheesy Crust')
                 <p>You don't have cheesy crust</p>
             @endunless --}}
+            {{-- @php
+                $name='Sameer';
+                echo($name);
+            @endphp --}}
+            {{-- @for ($i=0 ;$i < count($pizzas) ;$i++)
+                <p>{{$i}}- {{$pizzas[$i]['type']}} - {{$pizzas[$i]['base']}} - {{$pizzas[$i]['price']}}</p>
+            @endfor --}}
             <p>{{ $name }} - {{ $age }}</p>
             @foreach ($pizzas as $p)
                 <div>
