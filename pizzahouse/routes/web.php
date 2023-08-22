@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//index page
 Route::get('/pizzas', 'PizzaController@index');
-
+//web form to add new pizzas
+Route::get('/pizzas/create', 'PizzaController@create');
 //route parameters(wildcards)
 Route::get('/pizzas/{id}', 'PizzaController@show');
+

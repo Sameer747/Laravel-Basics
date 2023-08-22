@@ -34,7 +34,7 @@ class PizzaController extends Controller
         // $pizzas =Pizza::where('name','sameer')->get();
         $pizzas =Pizza::latest()->get();
         
-        return view('pizzas', [
+        return view('pizzas.index', [
             'pizzas' => $pizzas,    
             'name' => request('name'),//used for query parameter
             'age' => request('age'),//used for query parameter
@@ -56,7 +56,14 @@ class PizzaController extends Controller
     */
     public function show ($id) {
         // use the id varaible to query the db for a record 
-        return view('details', ['id' => $id]);
+        return view('pizzas.show', ['id' => $id]);
+    }
+
+    /*
+    to add new pizzas web form
+    */
+    public function create(){
+        return view('pizzas.create');
     }
 
 }
