@@ -21,7 +21,9 @@
                 {{-- Pizza House <br> --}}
                 The North's Best Pizzas.
             </div>
-
+            <p class="msg">{{session('msg')}}</p>
+            <a href="/pizzas/create"><button>Order a Pizza</button></a>
+        
             {{-- <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>
                 <a href="https://laracasts.com">Laracasts</a>

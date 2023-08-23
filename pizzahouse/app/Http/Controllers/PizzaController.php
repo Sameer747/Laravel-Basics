@@ -30,15 +30,15 @@ class PizzaController extends Controller
         */
 
         //get all data from db
-        // $pizzas = Pizza::all();
+        $pizzas = Pizza::all();
         // $pizzas =Pizza::OrderBy('name','desc')->get();
         // $pizzas =Pizza::where('name','sameer')->get();
-        $pizzas =Pizza::latest()->get();
+        // $pizzas =Pizza::latest()->get();
         
         return view('pizzas.index', [
             'pizzas' => $pizzas,    
-            'name' => request('name'),//used for query parameter
-            'age' => request('age'),//used for query parameter
+            // 'name' => request('name'),//used for query parameter
+            // 'age' => request('age'),//used for query parameter
         ]);
     
         /*
@@ -66,6 +66,28 @@ class PizzaController extends Controller
     */
     public function create(){
         return view('pizzas.create');
+    }
+
+    /*
+    for /pizzas route with get request.
+    */
+    public function store(){
+        /*
+        not working dont know why?
+        */
+        // error_log(request('name'));
+        // error_log(request('type'));
+        // error_log(request('base'));
+        
+        //new instance of pizza model
+        $pizza = new Pizza();
+        //add to the var $pizza
+        $pizza->name= request('name');
+        $pizza->type= request('type');
+        $pizza->base= request('base');
+        // error_log($pizza);//not working
+        $pizza->save();
+        return redirect('/')->with('msg','Thank you for your order.');
     }
 
 }

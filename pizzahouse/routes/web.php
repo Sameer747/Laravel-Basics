@@ -16,7 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 //index page
-Route::get('/pizzas', 'PizzaController@index');
+Route::post('/pizzas','PizzaController@store');//post data to db
+Route::get('/pizzas', 'PizzaController@index');//get data from d
 //web form to add new pizzas
 Route::get('/pizzas/create', 'PizzaController@create');
 //route parameters(wildcards)

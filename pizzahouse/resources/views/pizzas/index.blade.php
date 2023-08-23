@@ -30,7 +30,7 @@
             @endfor --}}
 
             {{-- this was used for query parameter. --}}
-            <p>{{ $name }} - {{ $age }}</p>
+            {{-- <p>{{ $name }} - {{ $age }}</p> --}}
             
             @foreach ($pizzas as $p)
                 <div>
