@@ -16,10 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 //index page
-Route::post('/pizzas','PizzaController@store');//post data to db
-Route::get('/pizzas', 'PizzaController@index');//get data from d
+Route::get('/pizzas', 'PizzaController@index');//get data from db
 //web form to add new pizzas
 Route::get('/pizzas/create', 'PizzaController@create');
+Route::post('/pizzas','PizzaController@store');//post data to db
 //route parameters(wildcards)
 Route::get('/pizzas/{id}', 'PizzaController@show');
 

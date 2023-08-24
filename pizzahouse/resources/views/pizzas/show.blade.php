@@ -13,6 +13,12 @@
         <h1>Order for {{$pizza->name}}</h1>
         <p class="type">Type - {{$pizza->type}}</p>
         <p class="base">Base - {{$pizza->base}}</p>
-        <a href="/pizzas" class="back"><button>Back to Pizzas</button></a>
+        <p class="toppings">Extra toppings:</p>
+        @foreach ($pizza->toppings as $topping)
+            <ul>
+                <li>{{ $topping }}</li>
+            </ul>
+        @endforeach
     </div>
+    <a href="/pizzas" class="back"><button>Back to Pizzas</button></a>
 @endsection

@@ -18,8 +18,15 @@
                 <option value="garlic crust">Garlic Crust</option>
                 <option value="thin & crispy">Thin & Crispy</option>                
             </select>
+            <fieldset>
+                <label for="extra_toppings">Extra toppings:</label><br/>
+                <input type="checkbox" name="toppings[]" value="mushroom">Mushrooms<br/> 
+                <input type="checkbox" name="toppings[]" value="peppers">Peppers<br/>
+                <input type="checkbox" name="toppings[]" value="garlic">Garlic<br/>
+                <input type="checkbox" name="toppings[]" value="olives">Olives<br/>
+            </fieldset>
             <input type="submit" value="Order Pizza">
-        
+            
         </form>
     </div>
 @endsection
