@@ -23,6 +23,7 @@
             </div>
             <p class="msg">{{session('msg')}}</p>
             <a href="/pizzas/create"><button>Order a Pizza</button></a>
+            <a href="/pizzas"><button>See all orders</button></a>
         
             {{-- <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>

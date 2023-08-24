@@ -22,4 +22,5 @@ Route::get('/pizzas/create', 'PizzaController@create');
 Route::post('/pizzas','PizzaController@store');//post data to db
 //route parameters(wildcards)
 Route::get('/pizzas/{id}', 'PizzaController@show');
+Route::delete('/pizzas/{id}','PizzaController@destroy');//delete from db
 

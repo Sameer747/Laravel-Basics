@@ -40,6 +40,8 @@
                     {{$p->name}} - {{$p->type}} - {{$p->base}}
                 </div>
             @endforeach
+            <p class="msg">{{session('msg')}}</p>
+            <a href="/"><button>Back to Home</button></a>
         </div>
     </div>
 @endsection
