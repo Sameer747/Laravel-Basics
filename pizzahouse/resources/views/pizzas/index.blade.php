@@ -1,11 +1,11 @@
-@extends('layout.layout')
+{{-- @extends('layout.layout')
 @section('content')
     <div class="flex-center position-ref full-height">
 
         <div class="content">
             <div class="title m-b-md">
                 Pizzas List.
-            </div>
+            </div> --}}
             {{-- for learning purpose on how blade works. --}}
             {{-- <p>{{ $type }} - {{ $base }} - {{ $price }}</p> --}}
             {{-- @if ($price > 10)
@@ -32,16 +32,29 @@
             {{-- this was used for query parameter. --}}
             {{-- <p>{{ $name }} - {{ $age }}</p> --}}
             
-            @foreach ($pizzas as $p)
+            {{-- @foreach ($pizzas as $p)
                 <div>
                     {{-- this was used when the data was an array made by me --}}
                     {{-- {{ @$loop->index }} - {{ $p['type'] }} - {{ $p['base'] }} - {{ $p['price'] }} --}}
                     
-                    {{$p->name}} - {{$p->type}} - {{$p->base}}
-                </div>
-            @endforeach
-            <p class="msg">{{session('msg')}}</p>
+                    {{-- <a href="/pizzas/{{$p->id}}">{{$p->name}}</a> --}}
+                {{-- </div> --}}
+            {{-- @endforeach --}} 
+            {{-- <p class="msg">{{session('msg')}}</p>
             <a href="/"><button>Back to Home</button></a>
         </div>
+    </div> --}}
+{{-- @endsection
+@extends('layouts.layout') --}}
+@extends('layout.layout') 
+@section('content')
+<div class="wrapper pizza-index">
+  <h1>Pizza Orders</h1>
+  @foreach($pizzas as $pizza)
+    <div class="pizza-item">
+      <img src="assets/img/pizza.png" alt="pizza icon">
+      <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
     </div>
+  @endforeach
+</div>
 @endsection

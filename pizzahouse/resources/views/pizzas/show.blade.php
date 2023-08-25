@@ -23,7 +23,7 @@
         @csrf
         @method('DELETE')
         <button>Complete Order</button>
-        </form>
+    </form>
     </div>
     <a href="/pizzas" class="back"><button>Back to Pizzas</button></a>
 @endsection
