@@ -46,7 +46,7 @@
     </div> --}}
 {{-- @endsection
 @extends('layouts.layout') --}}
-@extends('layout.layout') 
+@extends('layout.app') 
 @section('content')
 <div class="wrapper pizza-index">
   <h1>Pizza Orders</h1>
@@ -56,5 +56,6 @@
       <h4><a href="/pizzas/{{ $pizza->id }}">{{ $pizza->name }}</a></h4>
     </div>
   @endforeach
+  <a href="/"><button>Back to Home</button></a>
 </div>
 @endsection

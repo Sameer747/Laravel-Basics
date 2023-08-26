@@ -27,5 +27,9 @@ Route::post('/pizzas',[PizzaController::class,'store']);
 //route parameters(wildcards)
 Route::get('/pizzas/{id}',[PizzaController::class,'show']);
 // Route::get('/pizzas/{id}', 'PizzaController@show');
-Route::delete('/pizzas/{id}',[PizzaController::class,'destroy']);
-// Route::delete('/pizzas/{id}','PizzaController@destroy');//delete from db
+Route::delete('/pizzas/{id}',[PizzaController::class,'destroy']);//delete from db
+// Route::delete('/pizzas/{id}','PizzaController@destroy');
+//auth routes
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
