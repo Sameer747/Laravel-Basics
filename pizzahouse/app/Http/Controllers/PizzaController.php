@@ -7,7 +7,10 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
-    
+    // use this if you want middleware on all the methods
+    // public public function __construct() {
+    //     $this->middleware('auth');
+    // }   
     /*
     for /pizzas route
     */ 
