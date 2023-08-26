@@ -24,7 +24,7 @@ Route::get('/', function () {
 this route goes to the index page where we display all pizza orders.
 this is also authenticated via middleware only this route.
 */
-Route::get('/pizzas',[PizzaController::class,'index'])->middleware('auth');//get data from db
+Route::get('/pizzas',[PizzaController::class,'index'])->name('pizzas.index')->middleware('auth');//get data from db
 // Route::get('/pizzas', 'PizzaController@index');//laravel 6
 
 /*
